@@ -61,3 +61,13 @@ func New(token string) (s *Session, err error) {
 
 	return
 }
+
+func Resume(token string, sessionID string, resumeGatewayURL string, sequence int64) (s *Session, err error) {
+
+	s,err = New(token)
+	s.sessionID = sessionID
+	s.resumeGatewayURL = resumeGatewayURL
+	s.sequence = &sequence
+
+	return
+}

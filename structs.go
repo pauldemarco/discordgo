@@ -136,6 +136,10 @@ type Session struct {
 	wsMutex sync.Mutex
 }
 
+func (s *Session) Sequence() *int64 {
+	return s.sequence;
+}
+
 // Application stores values for a Discord Application
 type Application struct {
 	ID                  string   `json:"id,omitempty"`
